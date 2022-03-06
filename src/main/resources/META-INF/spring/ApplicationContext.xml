@@ -4,6 +4,7 @@
 	xsi:schemaLocation="
        http://www.springframework.org/schema/beans 
         http://www.springframework.org/schema/beans/spring-beans.xsd">
-        <!-- <bean id="SgtPeppers" class="com.example.springbasic.SgtPeppers">
-        </bean> -->
+        <!-- context.xml中最基本的bean声明模式，通过spring上下文可以用DI管理 -->
+        <bean id="SgtPeppers" class="com.example.springbasic.SgtPeppers">
+        </bean>
 </beans>
