@@ -1,10 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-	xsi:schemaLocation="
-       http://www.springframework.org/schema/beans 
-        http://www.springframework.org/schema/beans/spring-beans.xsd">
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p" xmlns:util="http://www.springframework.org/schema/util" xsi:schemaLocation="http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/util 
+    http://www.springframework.org/schema/util/spring-util.xsd">
+
         <!-- context.xml中最基本的bean声明模式，通过spring上下文可以用DI管理 -->
-        <bean id="SgtPeppers" class="com.example.springbasic.SgtPeppers">
+        <bean id="SgtPeppers" class="com.example.springbasic.SgtPeppers"></bean>
+        <!-- 用constructor-arg方法声明bean的构造方法 -->
+        <bean id="compactDisc" class="com.example.springbasic.BlankDisc">
+                <constructor-arg value="Sgt. Pepper's Lonely Hearts Club Band" />
+                <constructor-arg value="The Beatles" />
+                <constructor-arg>
+                        <list>
+                                <value>Sgt. Pepper's Lonely Hearts Club Band</value>
+                                <value>With a Little Help from My Friends</value>
+                                <value>Lucy in the Sky with Diamonds</value>
+                                <value>Getting Better</value>
+                                <value>Fixing a Hole</value>
+                                <value>She's Leaving Home</value>
+                                <value>Being for the Benefit of Mr. Kite!</value>
+                                <value>Within You Without You</value>
+                                <value>When I'm Sixty-Four</value>
+                                <value>Lovely Rita</value>
+                                <value>Good Morning Good Morning</value>
+                                <value>Sgt. Pepper's Lonely Hearts Club Band (Reprise)</value>
+                                <value>A Day in the Life</value>
+                        </list>
+                </constructor-arg>
+        </bean>
+        <bean id="compactDiscProp" class="com.example.springbasic.properties.BlankDisc" p:title="Sgt. Pepper's Lonely Hearts Club Band" p:artist="The Beatles">
+                <property name="tracks">
+                        <list>
+                                <value>Sgt. Pepper's Lonely Hearts Club Band</value>
+                                <value>With a Little Help from My Friends</value>
+                                <value>Lucy in the Sky with Diamonds</value>
+                                <value>Getting Better</value>
+                                <value>Fixing a Hole</value>
+                                <value>She's Leaving Home</value>
+                                <value>Being for the Benefit of Mr. Kite!</value>
+                                <value>Within You Without You</value>
+                                <value>When I'm Sixty-Four</value>
+                                <value>Lovely Rita</value>
+                                <value>Good Morning Good Morning</value>
+                                <value>Sgt. Pepper's Lonely Hearts Club Band (Reprise)</value>
+                                <value>A Day in the Life</value>
+                        </list>
+                </property>
         </bean>
 </beans>
