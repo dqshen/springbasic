@@ -37,9 +37,9 @@ public class CDplayerTest {
         /* 引入system-lamda包截取系统输出，进行断言测试 */
         String text = tapSystemOut(() -> {
             player.play();
-        });
+        }).trim();
 
         assertTrue(text.endsWith(
-                "Playing Sgt. Pepper's Lonely Hearts Club Band by The Beatles\n"));
+                "Playing Sgt. Pepper's Lonely Hearts Club Band by The Beatles"));
     };
 }
