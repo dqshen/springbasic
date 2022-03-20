@@ -14,4 +14,9 @@ public class SgtPeppers implements CompactDisc {
     public void play() {
         log.info("Playing " + title + " by " + artist);
     }
+
+    @Override
+    public void playTrack(int trackNumber) {
+        log.info("Playing" + title + " by " + artist);        
+    }
 }

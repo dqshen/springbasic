@@ -2,6 +2,9 @@ package com.example.springbasic;
 
 import java.util.List;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 public class BlankDisc implements CompactDisc {
     private String title;
     private String artist;
@@ -27,9 +30,16 @@ public class BlankDisc implements CompactDisc {
 
     @Override
     public void play() {
-        System.out.println("Playing" + title + " by " + artist);
+        log.info("Playing" + title + " by " + artist);
         for (String track : tracks) {
-            System.out.println("-Track: " + track);
+            log.info("-Track: " + track);
         }
+    }
+
+    @Override
+    public void playTrack(int trackNumber) {
+        log.info("Playing" + title + " by " + artist);
+        if (trackNumber < tracks.size())
+            log.info("-Track: " + tracks.get(trackNumber));
     }
 }
